@@ -440,8 +440,8 @@ public class LojaGUI extends JFrame {
         String cpf = CPF.getText();
         String senha = SENHA.getText();
 
-        if(login.verificarUsuário(cpf) == false){
-            menssagem.setBounds(128, 427, 147, 13);  
+        if(login.verificarUsuário(cpf) == false){;   
+            menssagem.setForeground(new Color(255,51,51));
             menssagem.setText("USUÁRIO NÃO ENCONTRADO");
             return;
         }

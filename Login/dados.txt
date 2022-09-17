@@ -1,2 +1,1 @@
-Login: admin | Senha: admin | Nome: admin 
-Login: 12312312312 | Senha: 0xPeppa@ | Nome: Pedro 
+Login: admin | Senha: admin | Nome: admin
