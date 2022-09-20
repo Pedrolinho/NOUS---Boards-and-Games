@@ -4,6 +4,7 @@ import Interface.Images.*;
 import Login.*;
 
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,6 +13,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LojaGUI extends JFrame {
 
@@ -361,34 +365,82 @@ public class LojaGUI extends JFrame {
         pack();
     }
     
-    public void menuPrincipal(JLabel iniciarsessão){
+    public void menuPrincipal(JLabel iniciarsessão, List<Produto>produtosList){
         iniciarsessão.setVisible(false);
+
+        JLabel mainmenu = new JLabel();mainmenu.setBounds(0,0,390,720);
+
+        setPreferredSize(new java.awt.Dimension(390, 720));
+        setResizable(false);
+        setSize(new java.awt.Dimension(390, 720));
+        getContentPane().setLayout(null);
 
         JPanel cabeçalho = new javax.swing.JPanel();cabeçalho.setBackground(new Color(168,188,189));        
         JPanel corpo = new javax.swing.JPanel();corpo.setBackground(new Color(168,188,189));        
         JPanel rodapé = new javax.swing.JPanel();rodapé.setBackground(new Color(168,188,189));
         
-        JLabel produtos = new javax.swing.JLabel();
-        produtos.setBackground(new Color(168,188,189));
-        ModernScrollPane jScrollPane2 = new ModernScrollPane(produtos);jScrollPane2.setBackground(new Color(168,188,189));
-        setPreferredSize(new java.awt.Dimension(390, 720));
-        setResizable(false);
-        setSize(new java.awt.Dimension(390, 720));
-        getContentPane().setLayout(null);
-        add(cabeçalho).setBounds(0, 0, 390, 140);
-        add(rodapé).setBounds(0, 700, 390, 20);
-        corpo.setLayout(null);
+        cabeçalho.setLayout(null);corpo.setLayout(null);rodapé.setLayout(null);
 
-        produtos.setIcon(new javax.swing.ImageIcon(imagens.getMenuPrincipal())); // NOI18N
-        produtos.setPreferredSize(new java.awt.Dimension(330, 1604));
-        produtos.setOpaque(true);
-        jScrollPane2.setViewportView(produtos);
+        Label searchBox = new Label(imagens.getSearchBox(), 30, 70, 296, 30);
+        Botão procurar = new Botão(imagens.getProcurar(), 269, 8, 16, 16);
+        
+        Botão carrinho = new Botão(imagens.getCarrinho(), 333, 72, 26, 25 );
+        JTextField procura = new JTextField("O que você procura?");
 
-        corpo.add(jScrollPane2);
-        jScrollPane2.setBounds(30, 0, 346, 560);
+        Botão fechar = new Botão(imagens.getFechar(), 345, 30, 17, 17);
+        fechar.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                fecharMouseReleased(evt);
+            }
+        });
 
-        add(corpo);
+        procura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                textMouseReleased(evt, procura);
+            }
+        });
+
+        procura.setBounds(8, 8, 140, 14);      
+        procura.setFont(new Font("Roboto", 0, 12));
+        procura.setForeground(new Color(126,126,126));
+        procura.setBackground(new Color(255,255,255));
+        procura.setBorder(null);
+
+        CheckBox menu = new CheckBox(imagens.getMenu(), 30, 30, 20, 15);
+        menu.getCheckBox().addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuactionPerformed(evt);
+            }
+        });
+
+        searchBox.getLabel().add(procurar.getBotão());searchBox.getLabel().add(procura);cabeçalho.add(menu.getCheckBox());
+        cabeçalho.add(searchBox.getLabel());cabeçalho.add(fechar.getBotão());cabeçalho.add(carrinho.getBotão());
+
+        Label produtos = new Label(imagens.getMenuPrincipalBG(), 0, 0, 330, 1604);
+        produtos.getLabel().setPreferredSize(new Dimension(330, 1604));
+        ModernScrollPane produtosScroll = new ModernScrollPane(produtos.getLabel());produtosScroll.setBackground(new Color(168,188,189));
+        produtosScroll.setViewportView(produtos.getLabel());
+
+        Botão combomistério = new Botão(imagens.getComboMistério(), 0, 0, 330, 204);
+        produtos.getLabel().add(combomistério.getBotão());
+        iniciarProdutos(produtos, produtosList);
+
+        procurar.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                menuPrincipal(mainmenu, filtro(procura.getText()));
+                System.out.println("mudou");
+            }
+        });
+
+        corpo.add(produtosScroll);
+        produtosScroll.setBounds(30, 0, 346, 560);
+        mainmenu.add(cabeçalho);mainmenu.add(corpo);mainmenu.add(rodapé);
+        cabeçalho.setBounds(0, 0, 390, 140);
         corpo.setBounds(0, 140, 390, 560);
+        rodapé.setBounds(0, 700, 390, 20);
+
+        add(mainmenu);
+
 
         pack();
     }
@@ -440,9 +492,9 @@ public class LojaGUI extends JFrame {
         String cpf = CPF.getText();
         String senha = SENHA.getText();
 
-        if(login.verificarUsuário(cpf) == false){;   
-            menssagem.setForeground(new Color(255,51,51));
+        if(login.verificarUsuário(cpf) == false){
             menssagem.setText("USUÁRIO NÃO ENCONTRADO");
+            menssagem.setForeground(new Color(255,51,51));
             return;
         }
         if(login.verificarSenha(cpf, senha) == false){
@@ -452,14 +504,16 @@ public class LojaGUI extends JFrame {
         }
         try { Thread.sleep (1500); } catch (InterruptedException ex) {}
 
-        menuPrincipal(iniciarsessão);
+        Produtos produtosList = new Produtos();
+        menuPrincipal(iniciarsessão, produtosList.getProdutos());
     }
 
     private void textMouseReleased(java.awt.event.MouseEvent evt, JTextField x) { 
         String texto = x.getText();
 
         if(texto.equalsIgnoreCase("CPF") ||
-           texto.equalsIgnoreCase("NOME")){
+           texto.equalsIgnoreCase("NOME") ||
+           texto.equalsIgnoreCase("O que você procura?")){
             x.setText("");
         }
     }
@@ -508,6 +562,47 @@ public class LojaGUI extends JFrame {
         back.setVisible(true);
     }
 
+    private void iniciarProdutos(Label produtos, List<Produto> produtosList){
+        int [] x = {0, 175};
+        int [] y = {224, 399, 574, 749, 924, 1099, 1274, 1449};
+
+        int index;
+        for(Produto z : produtosList){
+            index = produtosList.indexOf(z);
+
+            int indexx = index % 2;
+            int indexy = index / 2;
+
+            int xpos = x[indexx];
+            int ypos = y[indexy];
+
+            z.getLayout().setBounds(xpos, ypos, 155, 155);
+
+            produtos.getLabel().add(z.getLayout());
+        }
+    }
+
+    private void menuactionPerformed(ActionEvent evt){
+        
+    }
+
+    public List<Produto> filtro (String busca){
+        Produtos comparar = new Produtos();
+        List<Produto> produtosList = new ArrayList<>();
+
+        if(busca.equalsIgnoreCase("O que você procura?")){
+            return comparar.getProdutos();
+        }
+        
+        System.out.println(busca);
+        
+        for(Produto x : comparar.getProdutos()){
+            if(x.getNome().toLowerCase().contains(busca.toLowerCase())){
+                produtosList.add(x);
+            }
+        }
+        return produtosList;
+    }
     public static void main(String[] args) {
         new LojaGUI();
     }

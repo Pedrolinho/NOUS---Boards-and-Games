@@ -22,6 +22,7 @@ public class ModernScrollPane extends JScrollPane {
 
     public ModernScrollPane(Component view) {
         this(view, VERTICAL_SCROLLBAR_AS_NEEDED, HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        this.getVerticalScrollBar().setUnitIncrement(16);
     }
 
     public ModernScrollPane(int vsbPolicy, int hsbPolicy) {
