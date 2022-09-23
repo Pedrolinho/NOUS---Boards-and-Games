@@ -24,7 +24,6 @@ public class Botão {
 
         // Configurações para deixar o botão representado apenas pela imagem definida 
         botão.setOpaque(false);
-        botão.setFocusPainted(false);
         botão.setBorderPainted(false);
         botão.setContentAreaFilled(false);
         botão.setBorder(null);

@@ -4,7 +4,6 @@ import Interface.Images.*;
 import Login.*;
 
 import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,7 +12,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -375,6 +373,19 @@ public class LojaGUI extends JFrame {
         setSize(new java.awt.Dimension(390, 720));
         getContentPane().setLayout(null);
 
+        Label menuactivated = new Label(imagens.getMenuActivated(), 0, 0, 230, 720);
+        menuactivated.getLabel().setVisible(false);
+        menuactivated.getLabel().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuactivatedFocus(evt, menuactivated.getLabel());
+            }
+        });
+        menuactivated.getLabel().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuactivatedUnfocus(evt, menuactivated.getLabel());
+            }
+        });
+
         JPanel cabeçalho = new javax.swing.JPanel();cabeçalho.setBackground(new Color(168,188,189));        
         JPanel corpo = new javax.swing.JPanel();corpo.setBackground(new Color(168,188,189));        
         JPanel rodapé = new javax.swing.JPanel();rodapé.setBackground(new Color(168,188,189));
@@ -406,14 +417,14 @@ public class LojaGUI extends JFrame {
         procura.setBackground(new Color(255,255,255));
         procura.setBorder(null);
 
-        CheckBox menu = new CheckBox(imagens.getMenu(), 30, 30, 20, 15);
-        menu.getCheckBox().addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuactionPerformed(evt);
+        Botão menu = new Botão(imagens.getMenu(), 30, 30, 20, 15);
+        menu.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseReleased(evt, menuactivated.getLabel(), corpo);
             }
         });
 
-        searchBox.getLabel().add(procurar.getBotão());searchBox.getLabel().add(procura);cabeçalho.add(menu.getCheckBox());
+        searchBox.getLabel().add(procurar.getBotão());searchBox.getLabel().add(procura);cabeçalho.add(menu.getBotão());
         cabeçalho.add(searchBox.getLabel());cabeçalho.add(fechar.getBotão());cabeçalho.add(carrinho.getBotão());
 
         Label produtos = new Label(imagens.getMenuPrincipalBG(), 0, 0, 330, 1604);
@@ -434,14 +445,12 @@ public class LojaGUI extends JFrame {
 
         corpo.add(produtosScroll);
         produtosScroll.setBounds(30, 0, 346, 560);
-        mainmenu.add(cabeçalho);mainmenu.add(corpo);mainmenu.add(rodapé);
+        mainmenu.add(menuactivated.getLabel());mainmenu.add(cabeçalho);mainmenu.add(corpo);mainmenu.add(rodapé);
         cabeçalho.setBounds(0, 0, 390, 140);
         corpo.setBounds(0, 140, 390, 560);
         rodapé.setBounds(0, 700, 390, 20);
 
         add(mainmenu);
-
-
         pack();
     }
     
@@ -582,8 +591,8 @@ public class LojaGUI extends JFrame {
         }
     }
 
-    private void menuactionPerformed(ActionEvent evt){
-        
+    private void menuMouseReleased(java.awt.event.MouseEvent evt, JLabel menuactivated, JPanel corpo){
+        menuactivated.setVisible(true);
     }
 
     public List<Produto> filtro (String busca){
@@ -603,6 +612,15 @@ public class LojaGUI extends JFrame {
         }
         return produtosList;
     }
+
+    private void menuactivatedFocus(java.awt.event.MouseEvent evt, JLabel menuactivated){
+        menuactivated.setVisible(true);
+    }
+
+    private void menuactivatedUnfocus(java.awt.event.MouseEvent evt, JLabel menuactivated){
+        menuactivated.setVisible(false);
+    }
+
     public static void main(String[] args) {
         new LojaGUI();
     }

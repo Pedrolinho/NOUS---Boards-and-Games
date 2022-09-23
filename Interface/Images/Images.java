@@ -22,6 +22,7 @@ private String Carrinho = "NOUS/Interface/Images/Botões/Button Carrinho.png";
 private String Menu = "NOUS/Interface/Images/Botões/Button Menu.png";
 
 private String searchBox = "NOUS/Interface/Images/Buscar.png";
+private String MenuActivated = "NOUS/Interface/Images/Button Menu Activated.png";
 
 // Produtos
 private String layoutProdutos = "NOUS/Interface/Images/Produtos/Layout Produto.png";
@@ -62,6 +63,7 @@ public String getProcurar() {return Procurar;}
 public String getCarrinho() {return Carrinho;}
 public String getMenu() {return Menu;}
 public String getSearchBox() {return searchBox;}
+public String getMenuActivated() {return MenuActivated;}
 
 // Get produtos
 public String getLayoutProdutos() {return layoutProdutos;}
