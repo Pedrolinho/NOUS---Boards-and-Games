@@ -2,6 +2,7 @@ package Interface;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import Interface.Images.Images;
 
 public class Produtos {
@@ -31,7 +32,6 @@ public class Produtos {
         this.produtos.add(historiassinistras);this.produtos.add(magic);this.produtos.add(master);this.produtos.add(monopoly);
         this.produtos.add(munchkin);this.produtos.add(perfil7);this.produtos.add(pokemon);this.produtos.add(spookystories);
         this.produtos.add(stella);this.produtos.add(uno);this.produtos.add(warvikings);this.produtos.add(yugioh);
-        
     }
 
     public List<Produto> getProdutos() {

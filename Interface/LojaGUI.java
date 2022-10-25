@@ -385,6 +385,28 @@ public class LojaGUI extends JFrame {
                 menuactivatedUnfocus(evt, menuactivated.getLabel());
             }
         });
+        
+        Botão changeuser = new Botão(imagens.getChangeUser(), 30, 84, 185, 15);
+        changeuser.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuactivatedFocus(evt, menuactivated.getLabel());
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                iniciarSessão(mainmenu);
+            }
+
+        });
+        Botão aboutapp = new Botão(imagens.getAboutApp(), 30, 114, 185, 15);
+        aboutapp.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuactivatedFocus(evt, menuactivated.getLabel());
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                sobre(mainmenu);
+            }
+        });
+
+        menuactivated.getLabel().add(changeuser.getBotão());menuactivated.getLabel().add(aboutapp.getBotão());
 
         JPanel cabeçalho = new javax.swing.JPanel();cabeçalho.setBackground(new Color(168,188,189));        
         JPanel corpo = new javax.swing.JPanel();corpo.setBackground(new Color(168,188,189));        
@@ -419,7 +441,7 @@ public class LojaGUI extends JFrame {
 
         Botão menu = new Botão(imagens.getMenu(), 30, 30, 20, 15);
         menu.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
                 menuMouseReleased(evt, menuactivated.getLabel(), corpo);
             }
         });
@@ -434,7 +456,7 @@ public class LojaGUI extends JFrame {
 
         Botão combomistério = new Botão(imagens.getComboMistério(), 0, 0, 330, 204);
         produtos.getLabel().add(combomistério.getBotão());
-        iniciarProdutos(produtos, produtosList);
+        iniciarProdutos(produtos, produtosList, mainmenu);
 
         procurar.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -454,6 +476,36 @@ public class LojaGUI extends JFrame {
         pack();
     }
     
+    public void sobre(JLabel menuprincipal){
+        menuprincipal.setVisible(false);
+
+        JLabel sobre = new JLabel();
+
+        // Botão fechar
+        Botão fechar = new Botão(imagens.getFechar(), 345, 30, 17, 17);
+        fechar.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                fecharMouseReleased(evt);
+            }
+        });
+        sobre.add(fechar.getBotão());
+
+        // Botão voltar
+        Botão voltar = new Botão(imagens.getVoltar(), 30, 30, 8, 15);
+        voltar.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                voltarMouseReleased(evt, sobre, menuprincipal);
+            }
+        });
+        sobre.add(voltar.getBotão());
+
+        sobre.setIcon(new ImageIcon(imagens.getSobre()));
+        add(sobre);
+        sobre.setBounds(0, 0, 390, 720);
+
+        pack();
+    }
+
     // Ações
     private void iniciarSessãoMouseReleased(java.awt.event.MouseEvent evt, JLabel iniciar) {
         iniciarSessão(iniciar);
@@ -571,12 +623,19 @@ public class LojaGUI extends JFrame {
         back.setVisible(true);
     }
 
-    private void iniciarProdutos(Label produtos, List<Produto> produtosList){
+    private void iniciarProdutos(Label produtos, List<Produto> produtosList, JLabel mainmenu){
         int [] x = {0, 175};
         int [] y = {224, 399, 574, 749, 924, 1099, 1274, 1449};
 
         int index;
         for(Produto z : produtosList){
+            Botão carrinho = new Botão(imagens.getCarrinho(), 119, 125, 26, 25);
+            carrinho.getBotão().addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseReleased(java.awt.event.MouseEvent evt) {
+
+                }
+            });
+
             index = produtosList.indexOf(z);
 
             int indexx = index % 2;
@@ -585,9 +644,10 @@ public class LojaGUI extends JFrame {
             int xpos = x[indexx];
             int ypos = y[indexy];
 
-            z.getLayout().setBounds(xpos, ypos, 155, 155);
+            z.getProductBox().add(carrinho.getBotão());
+            z.getProductBox().setBounds(xpos, ypos, 155, 155);
 
-            produtos.getLabel().add(z.getLayout());
+            produtos.getLabel().add(z.getProductBox());
         }
     }
 
@@ -620,7 +680,7 @@ public class LojaGUI extends JFrame {
     private void menuactivatedUnfocus(java.awt.event.MouseEvent evt, JLabel menuactivated){
         menuactivated.setVisible(false);
     }
-
+    
     public static void main(String[] args) {
         new LojaGUI();
     }

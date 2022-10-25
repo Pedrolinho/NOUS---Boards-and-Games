@@ -8,6 +8,7 @@ private String MenuPrincipal = "NOUS/Interface/Images/Telas/Menu Principal.png";
 private String MenuPrincipalBG = "NOUS/Interface/Images/Telas/Menu Principal Background.png";
 private String Cadastro1 = "NOUS/Interface/Images/Telas/Cadastro1.png";
 private String Cadastro2 = "NOUS/Interface/Images/Telas/Cadastro2.png";
+private String Sobre = "NOUS/Interface/Images/Telas/Sobre.png";
 
 // Botões
 private String IniciarSessão = "NOUS/Interface/Images/Botões/Button Iniciar Sessão.png";
@@ -20,9 +21,12 @@ private String MostrarSenha = "NOUS/Interface/Images/Botões/Button Mostrar Senh
 private String Procurar = "NOUS/Interface/Images/Botões/Button Lupa.png";
 private String Carrinho = "NOUS/Interface/Images/Botões/Button Carrinho.png";
 private String Menu = "NOUS/Interface/Images/Botões/Button Menu.png";
+private String AboutApp = "NOUS/Interface/Images/Botões/Button About App.png";
+private String ChangeUser = "NOUS/Interface/Images/Botões/Button Change User.png";
+private String MenuActivated = "NOUS/Interface/Images/Botões/Button Menu Activated.png";
 
 private String searchBox = "NOUS/Interface/Images/Buscar.png";
-private String MenuActivated = "NOUS/Interface/Images/Button Menu Activated.png";
+private String addBox = "NOUS/Interface/Images/Add Box.png";
 
 // Produtos
 private String layoutProdutos = "NOUS/Interface/Images/Produtos/Layout Produto.png";
@@ -53,6 +57,7 @@ public String getMenuPrincipalBG() {return MenuPrincipalBG;}
 public String getCadastro1() {return Cadastro1;}
 public String getCadastro2() {return Cadastro2;}
 public String getIniciarSessão() {return IniciarSessão;}
+public String getSobre() {return Sobre;}
 public String getCriarConta() {return CriarConta;}
 public String getCriarContaString() {return criarContaString;}
 public String getAvançar() {return Avançar;}
@@ -63,7 +68,10 @@ public String getProcurar() {return Procurar;}
 public String getCarrinho() {return Carrinho;}
 public String getMenu() {return Menu;}
 public String getSearchBox() {return searchBox;}
+public String getAddBox() {return addBox;}
 public String getMenuActivated() {return MenuActivated;}
+public String getAboutApp() {return AboutApp;}
+public String getChangeUser() {return ChangeUser;}
 
 // Get produtos
 public String getLayoutProdutos() {return layoutProdutos;}
