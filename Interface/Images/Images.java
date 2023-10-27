@@ -2,56 +2,58 @@ package Interface.Images;
 
 public class Images {
 // Telas
-private String SplaashScreen = "NOUS/Interface/Images/Telas/Splashscreen.png";
-private String Iniciar = "NOUS/Interface/Images/Telas/Iniciar.png";
-private String MenuPrincipal = "NOUS/Interface/Images/Telas/Menu Principal.png";
-private String MenuPrincipalBG = "NOUS/Interface/Images/Telas/Menu Principal Background.png";
-private String Cadastro1 = "NOUS/Interface/Images/Telas/Cadastro1.png";
-private String Cadastro2 = "NOUS/Interface/Images/Telas/Cadastro2.png";
-private String Sobre = "NOUS/Interface/Images/Telas/Sobre.png";
+private String SplaashScreen = "Interface/Images/Telas/Splashscreen.png";
+private String Iniciar = "Interface/Images/Telas/Iniciar.png";
+private String IniciarASessão = "Interface/Images/Telas/Iniciar Sessão.png";
+private String MenuPrincipal = "Interface/Images/Telas/Menu Principal.png";
+private String MenuPrincipalBG = "Interface/Images/Telas/Menu Principal Background.png";
+private String Cadastro1 = "Interface/Images/Telas/Cadastro1.png";
+private String Cadastro2 = "Interface/Images/Telas/Cadastro2.png";
+private String Sobre = "Interface/Images/Telas/Sobre.png";
 
 // Botões
-private String IniciarSessão = "NOUS/Interface/Images/Botões/Button Iniciar Sessão.png";
-private String CriarConta = "NOUS/Interface/Images/Botões/Button Criar Conta.png";
-private String criarContaString = "NOUS/Interface/Images/Botões/Button Criar Conta String.png";
-private String Avançar = "NOUS/Interface/Images/Botões/Button Avançar.png";
-private String Voltar = "NOUS/Interface/Images/Botões/Button Voltar.png";
-private String Fechar = "NOUS/Interface/Images/Botões/Button Fechar.png";
-private String MostrarSenha = "NOUS/Interface/Images/Botões/Button Mostrar Senha.png";
-private String Procurar = "NOUS/Interface/Images/Botões/Button Lupa.png";
-private String Carrinho = "NOUS/Interface/Images/Botões/Button Carrinho.png";
-private String Menu = "NOUS/Interface/Images/Botões/Button Menu.png";
-private String AboutApp = "NOUS/Interface/Images/Botões/Button About App.png";
-private String ChangeUser = "NOUS/Interface/Images/Botões/Button Change User.png";
-private String MenuActivated = "NOUS/Interface/Images/Botões/Button Menu Activated.png";
+private String IniciarSessão = "Interface/Images/Botões/Button Iniciar Sessão.png";
+private String CriarConta = "Interface/Images/Botões/Button Criar Conta.png";
+private String criarContaString = "Interface/Images/Botões/Button Criar Conta String.png";
+private String Avançar = "Interface/Images/Botões/Button Avançar.png";
+private String Voltar = "Interface/Images/Botões/Button Voltar.png";
+private String Fechar = "Interface/Images/Botões/Button Fechar.png";
+private String MostrarSenha = "Interface/Images/Botões/Button Mostrar Senha.png";
+private String Procurar = "Interface/Images/Botões/Button Lupa.png";
+private String Carrinho = "Interface/Images/Botões/Button Carrinho.png";
+private String Menu = "Interface/Images/Botões/Button Menu.png";
+private String AboutApp = "Interface/Images/Botões/Button About App.png";
+private String ChangeUser = "Interface/Images/Botões/Button Change User.png";
+private String MenuActivated = "Interface/Images/Botões/Button Menu Activated.png";
 
-private String searchBox = "NOUS/Interface/Images/Buscar.png";
-private String addBox = "NOUS/Interface/Images/Add Box.png";
+private String searchBox = "Interface/Images/Buscar.png";
+private String addBox = "Interface/Images/Add Box.png";
 
 // Produtos
-private String layoutProdutos = "NOUS/Interface/Images/Produtos/Layout Produto.png";
-private String comboMistério = "NOUS/Interface/Images/Produtos/Combo Mistério.png";
-private String baralho = "NOUS/Interface/Images/Produtos/Baralho.png";
-private String darkstories = "NOUS/Interface/Images/Produtos/DarkStories.png";
-private String dixit = "NOUS/Interface/Images/Produtos/Dixit.png";
-private String dobble = "NOUS/Interface/Images/Produtos/Dobble.png";
-private String historiassinistras = "NOUS/Interface/Images/Produtos/HistóriasSinistras.png";
-private String magic = "NOUS/Interface/Images/Produtos/Magic.png";
-private String master = "NOUS/Interface/Images/Produtos/Master.png";
-private String monopoly = "NOUS/Interface/Images/Produtos/Monopoly.png";
-private String munchkin = "NOUS/Interface/Images/Produtos/Munchkin.png";
-private String perfil7 = "NOUS/Interface/Images/Produtos/Perfil7.png";
-private String pokemon = "NOUS/Interface/Images/Produtos/Pokemon.png";
-private String spookystories = "NOUS/Interface/Images/Produtos/SpookyStories.png";
-private String stella = "NOUS/Interface/Images/Produtos/Stella.png";
-private String uno = "NOUS/Interface/Images/Produtos/UNO.png";
-private String warvikings = "NOUS/Interface/Images/Produtos/WarVikings.png";
-private String yugioh = "NOUS/Interface/Images/Produtos/YuGiOh.png";
+private String layoutProdutos = "Interface/Images/Produtos/Layout Produto.png";
+private String comboMistério = "Interface/Images/Produtos/Combo Mistério.png";
+private String baralho = "Interface/Images/Produtos/Baralho.png";
+private String darkstories = "Interface/Images/Produtos/DarkStories.png";
+private String dixit = "Interface/Images/Produtos/Dixit.png";
+private String dobble = "Interface/Images/Produtos/Dobble.png";
+private String historiassinistras = "Interface/Images/Produtos/HistóriasSinistras.png";
+private String magic = "Interface/Images/Produtos/Magic.png";
+private String master = "Interface/Images/Produtos/Master.png";
+private String monopoly = "Interface/Images/Produtos/Monopoly.png";
+private String munchkin = "Interface/Images/Produtos/Munchkin.png";
+private String perfil7 = "Interface/Images/Produtos/Perfil7.png";
+private String pokemon = "Interface/Images/Produtos/Pokemon.png";
+private String spookystories = "Interface/Images/Produtos/SpookyStories.png";
+private String stella = "Interface/Images/Produtos/Stella.png";
+private String uno = "Interface/Images/Produtos/UNO.png";
+private String warvikings = "Interface/Images/Produtos/WarVikings.png";
+private String yugioh = "Interface/Images/Produtos/YuGiOh.png";
 
 
 // Getters
 public String getSplaashScreen() {return SplaashScreen;}
 public String getIniciar() {return Iniciar;}
+public String getIniciarASessão() {return IniciarASessão;}
 public String getMenuPrincipal() {return MenuPrincipal;}
 public String getMenuPrincipalBG() {return MenuPrincipalBG;}
 public String getCadastro1() {return Cadastro1;}

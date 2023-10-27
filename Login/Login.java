@@ -9,7 +9,7 @@ public class Login {
     public void adicionarUsuário(String NOME, String CPF, String SENHA){
 
         try{
-            FileWriter FW = new FileWriter("NOUS/Login/dados.txt", true);
+            FileWriter FW = new FileWriter("Login/dados.txt", true);
 
             FW.write("Login: " + CPF + " | Senha: " + SENHA + " | Nome: " + NOME + " \n");
             FW.close();
@@ -21,7 +21,7 @@ public class Login {
         try {
             List<String> manter = new ArrayList<>();
 
-            File dados = new File("NOUS/Login/dados.txt");
+            File dados = new File("Login/dados.txt");
 
             FileReader FR = new FileReader(dados);
             BufferedReader BR = new BufferedReader(FR);
@@ -54,7 +54,7 @@ public class Login {
 
     public void lerUsuários(){
         try {
-            FileReader FR = new FileReader("NOUS/Login/dados.txt");
+            FileReader FR = new FileReader("Login/dados.txt");
             BufferedReader BR = new BufferedReader(FR);
 
             String linha = BR.readLine();
@@ -69,7 +69,7 @@ public class Login {
 
     public boolean procurarUsuário(String CPF){
         try {
-            FileReader FR = new FileReader("NOUS/Login/dados.txt");
+            FileReader FR = new FileReader("Login/dados.txt");
             BufferedReader BR = new BufferedReader(FR);
 
             String linha = BR.readLine();
@@ -89,7 +89,7 @@ public class Login {
 
     public boolean verificarUsuário(String CPF){
         try {
-            FileReader FR = new FileReader("NOUS/Login/dados.txt");
+            FileReader FR = new FileReader("Login/dados.txt");
             BufferedReader BR = new BufferedReader(FR);
 
             String linha = BR.readLine();
@@ -107,7 +107,7 @@ public class Login {
 
     public boolean verificarSenha(String CPF, String Senha){
         try {
-            FileReader FR = new FileReader("NOUS/Login/dados.txt");
+            FileReader FR = new FileReader("Login/dados.txt");
             BufferedReader BR = new BufferedReader(FR);
 
             String linha = BR.readLine();

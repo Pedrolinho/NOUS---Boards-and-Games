@@ -43,7 +43,7 @@ public class LojaGUI extends JFrame {
     private void splashScreen() {
         JLabel splashscreen = new JLabel();
 
-        splashscreen.setIcon(new ImageIcon("NOUS/Interface/Images/Telas/Splashscreen.png"));
+        splashscreen.setIcon(new ImageIcon(imagens.getSplaashScreen()));
         add(splashscreen);
         splashscreen.setBounds(0, 0, 390, 720);
 
@@ -85,7 +85,7 @@ public class LojaGUI extends JFrame {
         iniciar.add(fechar.getBotão());
         
 
-        iniciar.setIcon(new ImageIcon("NOUS/Interface/Images/Telas/Iniciar.png"));
+        iniciar.setIcon(new ImageIcon(imagens.getIniciar()));
         add(iniciar);
         iniciar.setBounds(0, 0, 390, 720);
 
@@ -174,7 +174,7 @@ public class LojaGUI extends JFrame {
         });
         iniciarsessão.add(criarconta.getBotão());
 
-        iniciarsessão.setIcon(new ImageIcon("NOUS/Interface/Images/Telas/Iniciar Sessão.png"));
+        iniciarsessão.setIcon(new ImageIcon(imagens.getIniciarASessão()));
         add(iniciarsessão);
         iniciarsessão.setBounds(0, 0, 390, 720);
 
@@ -252,7 +252,7 @@ public class LojaGUI extends JFrame {
         });
         criarConta1.add(avançar.getBotão());
 
-        criarConta1.setIcon(new ImageIcon("NOUS/Interface/Images/Telas/Cadastro1.png"));
+        criarConta1.setIcon(new ImageIcon(imagens.getCadastro1()));
         add(criarConta1);
         criarConta1.setBounds(0, 0, 390, 720);
 
@@ -356,7 +356,7 @@ public class LojaGUI extends JFrame {
         });
         criarConta2.add(avançar.getBotão());
 
-        criarConta2.setIcon(new ImageIcon("NOUS/Interface/Images/Telas/Cadastro2.png"));
+        criarConta2.setIcon(new ImageIcon(imagens.getCadastro2()));
         add(criarConta2);
         criarConta2.setBounds(0, 0, 390, 720);
 
