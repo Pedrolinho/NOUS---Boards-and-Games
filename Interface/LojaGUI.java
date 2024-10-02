@@ -43,7 +43,11 @@ public class LojaGUI extends JFrame {
     private void splashScreen() {
         JLabel splashscreen = new JLabel();
 
+<<<<<<< HEAD
         splashscreen.setIcon(new ImageIcon("./Interface/Images/Telas/Splashscreen.png"));
+=======
+        splashscreen.setIcon(new ImageIcon(imagens.getSplaashScreen()));
+>>>>>>> 8f19cdcd85c7c802a1f66981e5c3f56b8cbce683
         add(splashscreen);
         splashscreen.setBounds(0, 0, 390, 720);
 
@@ -85,7 +89,11 @@ public class LojaGUI extends JFrame {
         iniciar.add(fechar.getBotão());
         
 
+<<<<<<< HEAD
         iniciar.setIcon(new ImageIcon("./Interface/Images/Telas/Iniciar.png"));
+=======
+        iniciar.setIcon(new ImageIcon(imagens.getIniciar()));
+>>>>>>> 8f19cdcd85c7c802a1f66981e5c3f56b8cbce683
         add(iniciar);
         iniciar.setBounds(0, 0, 390, 720);
 
@@ -174,7 +182,11 @@ public class LojaGUI extends JFrame {
         });
         iniciarsessão.add(criarconta.getBotão());
 
+<<<<<<< HEAD
         iniciarsessão.setIcon(new ImageIcon("./Interface/Images/Telas/Iniciar Sessão.png"));
+=======
+        iniciarsessão.setIcon(new ImageIcon(imagens.getIniciarASessão()));
+>>>>>>> 8f19cdcd85c7c802a1f66981e5c3f56b8cbce683
         add(iniciarsessão);
         iniciarsessão.setBounds(0, 0, 390, 720);
 
@@ -252,7 +264,11 @@ public class LojaGUI extends JFrame {
         });
         criarConta1.add(avançar.getBotão());
 
+<<<<<<< HEAD
         criarConta1.setIcon(new ImageIcon("./Interface/Images/Telas/Cadastro1.png"));
+=======
+        criarConta1.setIcon(new ImageIcon(imagens.getCadastro1()));
+>>>>>>> 8f19cdcd85c7c802a1f66981e5c3f56b8cbce683
         add(criarConta1);
         criarConta1.setBounds(0, 0, 390, 720);
 
@@ -356,7 +372,11 @@ public class LojaGUI extends JFrame {
         });
         criarConta2.add(avançar.getBotão());
 
+<<<<<<< HEAD
         criarConta2.setIcon(new ImageIcon("./Interface/Images/Telas/Cadastro2.png"));
+=======
+        criarConta2.setIcon(new ImageIcon(imagens.getCadastro2()));
+>>>>>>> 8f19cdcd85c7c802a1f66981e5c3f56b8cbce683
         add(criarConta2);
         criarConta2.setBounds(0, 0, 390, 720);
 
