@@ -178,11 +178,7 @@ public class ModernScrollPane extends JScrollPane {
 
         JPanel content = new JPanel();
         content.setPreferredSize(new Dimension(390, 1764));
-<<<<<<< HEAD
         JLabel a = new JLabel(new ImageIcon("./Interface/Images/Telas/Menu Principal.png"));
-=======
-        JLabel a = new JLabel(new ImageIcon("Interface/Images/Telas/Menu Principal.png"));
->>>>>>> 8f19cdcd85c7c802a1f66981e5c3f56b8cbce683
         a.setBounds(0,0,390,1764);
         content.add(a);
         frame.add(new ModernScrollPane(content));
